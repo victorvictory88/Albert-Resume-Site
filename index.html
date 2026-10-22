@@ -14,6 +14,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="revision.css">
+  <link rel="stylesheet" href="hero.css">
   <script src="app.js" defer></script>
   <script src="audio.js" defer></script>
 </head>
@@ -31,12 +32,11 @@
 </header>
 
 <main>
-<section class="hero hero-v2" id="top" aria-labelledby="hero-title">
+<div class="hero-scroll" id="top"><section class="hero hero-v2" id="hero" aria-labelledby="hero-title">
  <img class="hero-lettering" src="assets/albert-chan-lettering.webp" alt="" fetchpriority="high" width="1536" height="1024">
  <div class="hero-grain" aria-hidden="true"></div>
  <h1 class="sr-only" id="hero-title">Albert Chan</h1>
- <p class="hero-eyebrow"><span></span> AI COMMERCIALIZATION · LEADERSHIP · GROWTH</p>
- <div class="hero-copy"><span class="eyebrow">A CAREER IN MOTION</span><p>I help clients build a<br>competitive advantage<br>with trusted AI.</p><a class="text-link" href="#journey">Explore my career <span aria-hidden="true">↘</span></a></div>
+ <div class="hero-copy"><div class="hero-banner-label"><span class="eyebrow">A CAREER IN MOTION</span><p class="hero-eyebrow"><span></span> AI COMMERCIALIZATION · LEADERSHIP · GROWTH</p></div><p>I help clients build a competitive advantage with trusted AI.</p><a class="text-link" href="#journey">Explore my career <span aria-hidden="true">↘</span></a></div>
  <svg class="wave-filter-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs><filter id="portrait-wave" x="0" y="0" width="1" height="1" filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB"><feImage href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201536%201024%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22hand%22%20gradientUnits%3D%22userSpaceOnUse%22%20cx%3D%221225%22%20cy%3D%22470%22%20r%3D%22390%22%20gradientTransform%3D%22translate%281225%20470%29%20scale%28.78%201%29%20translate%28-1225%20-470%29%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ff8080%22%2F%3E%3Cstop%20offset%3D%22.42%22%20stop-color%3D%22%23ee8080%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23808080%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%221536%22%20height%3D%221024%22%20fill%3D%22%23808080%22%2F%3E%3Cellipse%20cx%3D%221225%22%20cy%3D%22470%22%20rx%3D%22305%22%20ry%3D%22390%22%20fill%3D%22url%28%23hand%29%22%2F%3E%3C%2Fsvg%3E" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="wave-field"/><feDisplacementMap id="wave-displacement" in="SourceGraphic" in2="wave-field" scale="0" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
  <div class="greeting-scene" data-look="front" aria-label="Albert’s animated illustrated avatar">
   <div class="greeting-idle">
@@ -45,9 +45,10 @@
    <div class="greeting-look right"><img src="assets/albert-look-right.webp" alt="" aria-hidden="true" width="1024" height="1536"></div>
   </div>
  </div>
+ <img class="leaning-avatar" src="assets/albert-leaning.webp" alt="" width="1024" height="1536" aria-hidden="true">
  <div class="greeting-controls" role="group" aria-label="Avatar interaction"><button type="button" class="wave-button">Wave hello <span aria-hidden="true">✋</span></button><button type="button" data-direction="left" aria-label="Look left">↖</button><button type="button" data-direction="front" aria-label="Look forward" aria-pressed="true">○</button><button type="button" data-direction="right" aria-label="Look right">↗</button></div>
  <div class="hero-footer"><p>Commercial leadership.<br>AI in production.</p><a class="scroll-cue" href="#journey"><span>SCROLL TO ROW</span><span class="scroll-line" aria-hidden="true">↓</span></a><p class="hero-years">2026 <span>────</span> 2004</p></div>
-</section>
+</section></div>
 <div class="company-strip"><span class="logo-chip"><img src="assets/logos/rowland-trimmed.png" alt="Rowland AI" loading="lazy"></span><span class="logo-chip"><img src="assets/logos/meta.svg" alt="Meta" loading="lazy"></span><span class="logo-chip tickr-strip" aria-label="Tickr">tickr</span><span class="logo-chip"><img src="assets/logos/google.svg" alt="Google" loading="lazy"></span><span class="logo-chip"><img src="assets/logos/pg.png" alt="P&amp;G" loading="lazy"></span></div>
 <section class="journey" id="journey" aria-labelledby="journey-heading"><div class="section-intro"><div><span class="eyebrow">01 / THE CAREER COURSE</span><h2 id="journey-heading">Start with today.<br><em>Trace the journey.</em></h2></div><p>From AI in production<br>back to the foundation.</p></div><div class="journey-layout"><div class="course-sticky"><div class="course-heading"><span class="eyebrow">CAREER COURSE / TODAY–2004</span><span class="course-current">Rowland AI</span></div><div class="course-art">        <svg class="course-svg" viewBox="0 0 620 620" role="img" aria-labelledby="course-title course-description">
           <title id="course-title">A rowing course through Albert’s career</title>

@@ -6,6 +6,9 @@
   const $$ = (selector) => [...document.querySelectorAll(selector)];
   const hero = $('.hero');
   const scene = $('.greeting-scene');
+  const heroScroll = $('.hero-scroll');
+  const lettering = $('.hero-lettering');
+  const leaningAvatar = $('.leaning-avatar');
   const waveDisplacement = $('#wave-displacement');
   const badge = $('.crew-badge');
   const motionButton = $('.motion-toggle');
@@ -22,10 +25,11 @@
   let pointerX = 0, pointerY = 0, currentX = 0, currentY = 0;
   let currentProgress = -1, raf = 0, manualDirection = false;
   let lastInput = Date.now(), idleTick = 0, heroVisible = true, waveFrame = 0;
+  let heroLayout = null, heroProgress = 0;
   const heroObserver = new IntersectionObserver(entries => { heroVisible = entries[0].isIntersecting; scene.classList.toggle('offscreen', !heroVisible); });
   heroObserver.observe(hero);
   setInterval(() => {
-    if (motionPaused || document.hidden || !heroVisible || manualDirection || Date.now() - lastInput < 4500) return;
+    if (motionPaused || document.hidden || !heroVisible || heroProgress > .32 || manualDirection || Date.now() - lastInput < 4500) return;
     const sequence = ['front', 'left', 'front', 'right', 'front'];
     idleTick = (idleTick + 1) % sequence.length;
     setDirection(sequence[idleTick]);
@@ -39,7 +43,7 @@
 
   function playWave() {
     stopWave();
-    if (motionPaused || document.hidden || !heroVisible) return;
+    if (motionPaused || document.hidden || !heroVisible || heroProgress > .32) return;
     setDirection('front');
     scene.classList.add('wave-now');
     const started = performance.now();
@@ -99,7 +103,7 @@
   preference.addEventListener('change', event => { motionPaused = event.matches; applyMotionPreference(); });
 
   hero.addEventListener('pointermove', event => {
-    if (motionPaused || event.pointerType === 'touch' || drag) return;
+    if (motionPaused || heroProgress > .32 || event.pointerType === 'touch' || drag) return;
     lastInput = Date.now();
     const rect = hero.getBoundingClientRect();
     const nx = (event.clientX - rect.left) / rect.width;
@@ -166,6 +170,87 @@
     marker.setAttribute('transform', `translate(${point.x} ${point.y})`);
   });
 
+  const clamp = value => Math.max(0, Math.min(1, value));
+  const smooth = value => { const t = clamp(value); return t * t * (3 - 2 * t); };
+  const mix = (a, b, t) => a + (b - a) * t;
+
+  function measureHero() {
+    const width = hero.clientWidth, height = hero.clientHeight;
+    const mobile = width <= 760;
+    const distance = Math.max(500, height * .88);
+    heroScroll.style.height = `${height + distance}px`;
+    const start = heroScroll.getBoundingClientRect().top + window.scrollY;
+    let first, last;
+    if (mobile) {
+      first = { x: 0, y: Math.max(125, height * .16), scale: width / 1536 };
+      const scale = width * 1.7 / 1536;
+      last = { x: width * .6 - 1536 * scale * .82, y: height * .64 - 1024 * scale * .872, scale };
+    } else {
+      const scale = Math.min(width * .98 / 1536, (height - Math.max(270, 182 + $('.hero-copy').offsetHeight)) / (1024 * (.872 - .142)));
+      first = { x: (width - 1536 * scale) / 2, y: 80 - 1024 * scale * .142, scale };
+      last = { ...first };
+    }
+    const baseline = first.y + 1024 * first.scale * .872;
+    const portraitWidth = Math.min(width * (mobile ? 1.02 : .6), 920, (baseline - 100) * 1.5);
+    const portraitHeight = portraitWidth / 1.5;
+    const portraitX = width * (mobile ? .61 : .69) - portraitWidth / 2;
+    const portraitY = baseline - portraitHeight;
+    const finalBaseline = last.y + 1024 * last.scale * .872;
+    const supportY = last.y + 1024 * last.scale * .624;
+    const fullHeight = (finalBaseline - supportY) / (.96 - .347);
+    const fullWidth = fullHeight * 2 / 3;
+    const fullX = last.x + 1536 * last.scale * .82 - fullWidth * .17;
+    const fullY = supportY - fullHeight * .347;
+    heroLayout = { width, height, mobile, distance, start, first, last, baseline,
+      portraitWidth, portraitHeight, portraitX, portraitY, fullHeight, fullWidth, fullX, fullY };
+    hero.style.setProperty('--chan-baseline', `${baseline}px`);
+    $('.hero-copy').style.bottom = '';
+  }
+
+  function updateHero() {
+    if (!heroLayout) return;
+    const g = heroLayout;
+    const raw = clamp((window.scrollY - g.start) / (g.distance * .78));
+    heroProgress = raw;
+    const progress = motionPaused ? (raw >= .5 ? 1 : 0) : smooth(raw);
+    const letterX = mix(g.first.x, g.last.x, progress);
+    const letterY = mix(g.first.y, g.last.y, progress);
+    const letterScale = mix(g.first.scale, g.last.scale, progress);
+    lettering.style.transform = `translate(${letterX}px,${letterY}px) scale(${letterScale})`;
+    const endHeadX = g.fullX + g.fullWidth * .424;
+    const endHeadY = g.fullY + g.fullHeight * .117;
+    const endPortraitWidth = g.fullWidth * .22 / .332;
+    const portraitWidth = mix(g.portraitWidth, endPortraitWidth, progress);
+    const portraitHeight = portraitWidth / 1.5;
+    const headX = mix(g.portraitX + g.portraitWidth * .44, endHeadX, progress);
+    const headY = mix(g.portraitY + g.portraitHeight * .31, endHeadY, progress);
+    scene.style.left = `${headX - portraitWidth * .44}px`;
+    scene.style.top = `${headY - portraitHeight * .31}px`;
+    scene.style.width = `${portraitWidth}px`;
+    scene.style.height = `${portraitHeight}px`;
+    const blend = progress > .28 ? 1 : 0;
+    scene.style.opacity = String(1 - blend);
+    const bodyScale = portraitWidth * .332 / (g.fullWidth * .22);
+    leaningAvatar.style.width = `${g.fullWidth}px`;
+    leaningAvatar.style.height = `${g.fullHeight}px`;
+    leaningAvatar.style.left = '0px';
+    leaningAvatar.style.top = '0px';
+    leaningAvatar.style.transform = `translate(${headX - g.fullWidth * bodyScale * .424}px,${headY - g.fullHeight * bodyScale * .117}px) scale(${bodyScale})`;
+    leaningAvatar.style.opacity = String(blend);
+    const controls = $('.greeting-controls');
+    controls.style.left = `${g.portraitX + g.portraitWidth * .5}px`;
+    controls.style.bottom = `${g.height - g.baseline + 16}px`;
+    controls.style.opacity = String(1 - smooth(raw / .3));
+    controls.inert = raw > .3;
+    controls.setAttribute('aria-hidden', String(raw > .3));
+    $('.hero-copy').style.top = `${letterY + 1024 * letterScale * .872 + 16}px`;
+    $('.hero-copy').style.opacity = '1';
+    $('.hero-copy').inert = false;
+    hero.dataset.fullbody = String(raw > .32);
+    hero.dataset.heroProgress = raw.toFixed(3);
+    hero.dataset.leaning = String(raw >= .999);
+  }
+
   function updateCourse() {
     const mobile = window.innerWidth <= 760;
     const focus = mobile ? 280 + (window.innerHeight - 280) * .42 : window.innerHeight * .51;
@@ -205,6 +290,7 @@
 
   function frame() {
     raf = 0;
+    updateHero();
     updateCourse();
     if (!motionPaused) {
       currentX += (pointerX - currentX) * .11;
@@ -218,7 +304,7 @@
   }
   function requestUpdate() { if (!raf) raf = requestAnimationFrame(frame); }
   window.addEventListener('scroll', requestUpdate, { passive: true });
-  window.addEventListener('resize', requestUpdate, { passive: true });
+  window.addEventListener('resize', () => { measureHero(); requestUpdate(); }, { passive: true });
   // Career highlights remain visible without disclosure controls.
 
   $('.copy-email').addEventListener('click', async () => {
@@ -230,6 +316,7 @@
       status.textContent = 'albertchan@alumni.harvard.edu';
     }
   });
+  measureHero();
   applyMotionPreference();
   playWave();
 })();
