@@ -180,13 +180,19 @@
     const distance = Math.max(500, height * .88);
     heroScroll.style.height = `${height + distance}px`;
     const start = heroScroll.getBoundingClientRect().top + window.scrollY;
+    // Reserve the measured banner and footer heights before sizing the name.
+    const footerHeight = $('.hero-footer').offsetHeight;
+    const bannerHeight = $('.hero-copy').offsetHeight;
+    const maxBaseline = height - 28 - footerHeight - 24 - bannerHeight - 16;
     let first, last;
     if (mobile) {
-      first = { x: 0, y: Math.max(125, height * .16), scale: width / 1536 };
+      const top = Math.max(125, height * .16);
+      const initialScale = Math.min(width / 1536, (maxBaseline - top) / (1024 * .872));
+      first = { x: (width - 1536 * initialScale) / 2, y: top, scale: initialScale };
       const scale = width * 1.7 / 1536;
-      last = { x: width * .6 - 1536 * scale * .82, y: height * .64 - 1024 * scale * .872, scale };
+      last = { x: width * .6 - 1536 * scale * .82, y: Math.min(height * .64, maxBaseline) - 1024 * scale * .872, scale };
     } else {
-      const scale = Math.min(width * .98 / 1536, (height - Math.max(270, 182 + $('.hero-copy').offsetHeight)) / (1024 * (.872 - .142)));
+      const scale = Math.min(width * .98 / 1536, (maxBaseline - 80) / (1024 * (.872 - .142)));
       first = { x: (width - 1536 * scale) / 2, y: 80 - 1024 * scale * .142, scale };
       last = { ...first };
     }
@@ -316,6 +322,11 @@
       status.textContent = 'albertchan@alumni.harvard.edu';
     }
   });
+  // Text wrapping and font changes can alter the space needed below the name.
+  const heroTextObserver = new ResizeObserver(() => { measureHero(); requestUpdate(); });
+  heroTextObserver.observe($('.hero-copy'));
+  heroTextObserver.observe($('.hero-footer'));
+  document.fonts.ready.then(() => { measureHero(); requestUpdate(); });
   measureHero();
   applyMotionPreference();
   playWave();
