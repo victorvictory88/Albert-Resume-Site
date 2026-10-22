@@ -221,13 +221,13 @@
   window.addEventListener('resize', requestUpdate, { passive: true });
   // Career highlights remain visible without disclosure controls.
 
-  $('.copy-profile').addEventListener('click', async () => {
+  $('.copy-email').addEventListener('click', async () => {
     const status = $('.copy-status');
     try {
-      await navigator.clipboard.writeText('https://www.linkedin.com/in/albe88/');
-      status.textContent = 'LinkedIn profile copied to clipboard.';
+      await navigator.clipboard.writeText('albertchan@alumni.harvard.edu');
+      status.textContent = 'Email address copied to clipboard.';
     } catch {
-      status.textContent = 'https://www.linkedin.com/in/albe88/';
+      status.textContent = 'albertchan@alumni.harvard.edu';
     }
   });
   applyMotionPreference();
