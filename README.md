@@ -31,17 +31,20 @@ This repository contains Albert Chan’s interactive career portfolio, prepared 
 - Select an employer logo to jump to that career chapter.
 - Drag or flip the crew pass inside section 02.
 - Pause decorative motion with the header control.
-- Select “Quiet music” at the lower right to start the optional ambient soundtrack.
-- Adjust its volume with the slider, or select its button again to pause playback.
+- Music starts automatically where the browser allows it, or after the first visitor interaction.
+- Use the lower-right music control to turn playback off or on. The visitor’s choice is saved in that browser.
+- Hover over or focus the music control to reveal its volume slider.
 
 The avatar uses layered illustrations, with a continuous hand-sway effect, breathing animation, and directional portraits. The wave uses the intact portrait, keeping the shoulder and arm connected. System reduced-motion preferences are respected, and offscreen avatar animation pauses.
 
-The original soundtrack uses soft synthesized tones with a 12% starting volume and a 35% slider maximum. Music starts through a visitor’s explicit tap, pauses while the tab is hidden, and resumes with the tab after playback has been selected. No external music service or audio download is required.
+The original soundtrack uses soft synthesized tones with a 12% starting volume and a 35% slider maximum. Music attempts playback on arrival and starts after a visitor interaction when browser autoplay rules require one. It pauses while the tab is hidden and resumes on return when enabled. An explicit off choice remains saved across visits. No external music service or audio download is required.
 
 ## Sources and boundaries
 
 Career details follow Albert’s supplied resume, approved career facts, and his current instructions. The Goldman Sachs and LEGO speaking engagements were explicitly confirmed during this revision. The original resume, family photograph, raw source images, and personal residence information remain outside the publication package.
 
 Company logos come from official company assets where available. Accenture, OpenAI, eBay, and the two national flags use Wikimedia source files. Tickr retains a text label because its historical image server was unavailable. `ASSET-SOURCES.json` records the logo sources.
+
+University of Washington and ELVTR appear alongside the teaching summary. Harvard Business School appears as a guest lecturing engagement. Their transparent logo assets come from official university and company pages. The opening date range reads 2004–2026.
 
 The rowing course provides visual navigation without making claims about athletic history.

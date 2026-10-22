@@ -1,5 +1,5 @@
 {
-  "retrieved": "2026-10-21",
+  "retrieved": "2026-10-22",
   "assets": [
     {
       "file": "rowland.png",
@@ -155,6 +155,24 @@
       "source_page": "https://commons.wikimedia.org/wiki/File:Accenture.svg",
       "asset_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg",
       "note": "Transparent Accenture wordmark with purple accent; identity checked against official Accenture header and brand CSS."
+    },
+    {
+      "file": "uw-signature-white.png",
+      "asset_url": "https://cdn.uw.edu/wp-content/uploads/sites/230/2023/11/02134834/Signature_Stacked_White.png",
+      "source_page": "https://www.washington.edu/brand/brand-elements/logos/",
+      "status": "downloaded official transparent white signature"
+    },
+    {
+      "file": "elvtr.svg",
+      "asset_url": "https://elvtr.com/",
+      "source_page": "https://elvtr.com/",
+      "status": "extracted official inline header SVG; viewBox casing normalized; displayed reversed with CSS"
+    },
+    {
+      "file": "hbs.svg",
+      "asset_url": "https://www.hbs.edu/",
+      "source_page": "https://www.hbs.edu/",
+      "status": "extracted official inline header SVG; wordmark foreground set white for slate background"
     }
   ],
   "verification": {
