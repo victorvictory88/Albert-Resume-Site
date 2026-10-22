@@ -155,9 +155,9 @@
     if (master && enabled) master.gain.setTargetAtTime(Number(volume.value) / 100, context.currentTime, .12);
   });
   document.addEventListener('visibilitychange', () => {
-    if (!context) return;
-    if (document.hidden) context.suspend().catch(() => {});
-    else if (enabled) start();
+    if (document.hidden) {
+      if (context) context.suspend().catch(() => {});
+    } else if (enabled) start();
   });
   listenForPlayback();
   render();
