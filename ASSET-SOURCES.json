@@ -1,0 +1,175 @@
+{
+  "retrieved": "2026-10-21",
+  "assets": [
+    {
+      "file": "rowland.png",
+      "asset_url": "https://rowland.ai/assets/rowland-logo-INR3zYBW.png",
+      "source_page": "https://rowland.ai/",
+      "bytes": 16523,
+      "status": "downloaded"
+    },
+    {
+      "file": "google.svg",
+      "asset_url": "https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg",
+      "source_page": "https://about.google/brand-resource-center/",
+      "bytes": 1660,
+      "status": "downloaded"
+    },
+    {
+      "file": "meta.svg",
+      "asset_url": "https://static.xx.fbcdn.net/rsrc.php/y9/r/tL_v571NdZ0.svg",
+      "source_page": "https://www.meta.com/",
+      "bytes": 12066,
+      "status": "downloaded"
+    },
+    {
+      "file": "walmart.svg",
+      "asset_url": "https://corporate.walmart.com/content/dam/corporate/site-images/WMT-Wordmark-New-Small-Black_RGB.svg",
+      "source_page": "https://corporate.walmart.com/",
+      "bytes": 1874,
+      "status": "downloaded"
+    },
+    {
+      "file": "costco.png",
+      "asset_url": "https://gdx-assets.costco.com/adobe/assets/urn:aaid:aem:700b4244-1830-4bb4-8c15-89ec75777531/as/Costco-logo-HEX.avif",
+      "source_page": "https://www.costco.com/",
+      "bytes": 66708,
+      "status": "downloaded",
+      "note": "Official AVIF decoded to PNG with original pixels retained."
+    },
+    {
+      "file": "target.svg",
+      "asset_url": "https://corporate.target.com/assets/images/svg/svg-icon-sprite.svg",
+      "source_page": "https://corporate.target.com/",
+      "bytes": 361,
+      "status": "downloaded",
+      "note": "Exact standalone bullseye paths extracted from the official SVG sprite; standard Target Red applied."
+    },
+    {
+      "file": "kroger.svg",
+      "asset_url": "https://www.thekrogerco.com/wp-content/uploads/2026/06/logo.svg",
+      "source_page": "https://www.thekrogerco.com/",
+      "bytes": 7055,
+      "status": "downloaded"
+    },
+    {
+      "file": "ebay.svg",
+      "asset_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:EBay_logo.svg",
+      "bytes": 3853,
+      "status": "downloaded"
+    },
+    {
+      "file": "fanatics.svg",
+      "asset_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Fanatics_company_logo.svg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fanatics_company_logo.svg",
+      "bytes": 4847,
+      "status": "downloaded"
+    },
+    {
+      "file": "goldman-sachs.png",
+      "asset_url": "https://www.goldmansachs.com/images/gs-wordmark-black.png",
+      "source_page": "https://www.goldmansachs.com/",
+      "bytes": 18748,
+      "status": "downloaded"
+    },
+    {
+      "file": "lego.svg",
+      "asset_url": "https://assets.lego.com/logos/v4.10.0/brand-lego.svg",
+      "source_page": "https://www.lego.com/en-us/aboutus",
+      "bytes": 5256,
+      "status": "downloaded"
+    },
+    {
+      "file": "pg.png",
+      "asset_url": "https://images.ctfassets.net/oggad6svuzkv/1RDsCrtJDe9kk02UblSF1i/f9908f6b5b0db183e0cb612c6ff910ce/Multimedia_Logos_phase_logo_2018_PGlogo.png",
+      "source_page": "https://us.pg.com/newsroom/multimedia/logos/",
+      "bytes": 136994,
+      "status": "downloaded"
+    },
+    {
+      "file": "japan.svg",
+      "asset_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Flag_of_Japan.svg",
+      "bytes": 209,
+      "status": "downloaded",
+      "note": "Added viewBox matching original intrinsic dimensions; flag geometry retained."
+    },
+    {
+      "file": "south-korea.svg",
+      "asset_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Flag_of_South_Korea.svg",
+      "bytes": 589,
+      "status": "downloaded"
+    },
+    {
+      "file": "instacart.svg",
+      "source_page": "https://www.instacart.com/company",
+      "asset_url": "inline SVG in company header",
+      "status": "downloaded",
+      "bytes": 2889,
+      "note": "Original wordmark paths extracted; currentColor resolved to company forest-green."
+    },
+    {
+      "file": "amazon.svg",
+      "source_page": "https://www.aboutamazon.com/",
+      "asset_url": "inline SVG in company footer",
+      "status": "downloaded",
+      "bytes": 9816,
+      "note": "Official wordmark paths with a dark wordmark fill and orange smile for the transparent light surface."
+    },
+    {
+      "file": "fanatics.png",
+      "asset_url": "https://www.fanaticsinc.com/s/Fanatics-Logo-Packages.zip",
+      "source_page": "https://www.fanaticsinc.com/media-center",
+      "status": "downloaded",
+      "bytes": 8783,
+      "note": "Official downloaded horizontal black PNG; native file Fanatics Logo Packages/Fanatics_Logo_Horizontal_RGB_BLK.png"
+    },
+    {
+      "file": "rowland-trimmed.png",
+      "source_file": "rowland.png",
+      "note": "Transparent outer padding trimmed, original logo pixels preserved. Allow CSS clear space around image.",
+      "status": "derived"
+    },
+    {
+      "file": "fanatics-trimmed.png",
+      "source_file": "fanatics.png",
+      "note": "Transparent outer padding trimmed, original logo pixels preserved. Allow CSS clear space around image.",
+      "status": "derived"
+    },
+    {
+      "file": "openai.svg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:OpenAI_logo_2025_(wordmark).svg",
+      "asset_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/OpenAI_logo_2025_%28wordmark%29.svg",
+      "note": "2025 OpenAI wordmark; checked against the official OpenAI brand page."
+    },
+    {
+      "file": "anthropic.svg",
+      "source_page": "https://www.anthropic.com/news",
+      "asset_url": "inline header SVG",
+      "note": "Official wordmark paths; currentColor resolved to the supplied near-black."
+    },
+    {
+      "file": "accenture.svg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Accenture.svg",
+      "asset_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg",
+      "note": "Transparent Accenture wordmark with purple accent; identity checked against official Accenture header and brand CSS."
+    }
+  ],
+  "verification": {
+    "svg_parse": "all SVG files parsed",
+    "external_svg_references": "none",
+    "visual_inspection": "All 16 marks/flags viewed on neutral background. Target standalone bullseye inspected in original sprite. Official Fanatics package viewed separately.",
+    "known_display_requirement": "Amazon wordmark now uses a dark fill on the transparent light surface."
+  },
+  "gaps": [
+    {
+      "company": "Tickr",
+      "status": "historical identity confirmed; image endpoint unavailable",
+      "source_page": "https://www.prweb.com/releases/tickr-welcomes-former-google-and-p-amp-g-executive-albert-chan-as-chief-revenue-officer-854731334.html",
+      "asset_url": "https://ww1.prweb.com/prfiles/2020/07/17/18196351/Tickr%20Logo.png",
+      "recommendation": "Use a Tickr text label. Avoid the current RiskWise logo or unrelated trading-app logos."
+    }
+  ]
+}
