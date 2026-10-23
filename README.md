@@ -48,3 +48,5 @@ Company logos come from official company assets where available. Accenture, Open
 University of Washington and ELVTR appear alongside the teaching summary. Harvard Business School appears as a guest lecturing engagement. Their transparent logo assets come from official university and company pages. The opening date range reads 2004–2026.
 
 The rowing course provides visual navigation without making claims about athletic history.
+
+Section 02 includes three 15-second speaking previews and a 12-image photo ticker. The video dialog supports keyboard dismissal and selectable English captions. Background music pauses during previews and preserves the visitor preference.

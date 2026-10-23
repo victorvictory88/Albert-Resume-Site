@@ -189,5 +189,79 @@
       "asset_url": "https://ww1.prweb.com/prfiles/2020/07/17/18196351/Tickr%20Logo.png",
       "recommendation": "Use a Tickr text label. Avoid the current RiskWise logo or unrelated trading-app logos."
     }
-  ]
+  ],
+  "speaking_media": {
+    "added": "2026-10-23",
+    "permission": "User supplied the recordings and photos and requested publication on both portfolio hosts.",
+    "videos": [
+      {
+        "file": "assets/speaking/goldman-15s.mp4",
+        "source": "https://photos.app.goo.gl/pEWAFTR1apmTcjpdA",
+        "duration_seconds": 15
+      },
+      {
+        "file": "assets/speaking/uw-15s.mp4",
+        "source": "https://www.youtube.com/watch?v=XeUWk8sPivM",
+        "duration_seconds": 15
+      },
+      {
+        "file": "assets/speaking/icesi-15s.mp4",
+        "source": "https://www.youtube.com/watch?v=NeYOBTJIsfg",
+        "source_session": "05:51:00 through 06:30:00",
+        "duration_seconds": 15,
+        "captions": "English translation of the original Spanish audio"
+      }
+    ],
+    "photos": [
+      {
+        "file": "ai-marketing.webp",
+        "alt": "AI in Marketing event poster featuring Albert Chan"
+      },
+      {
+        "file": "agents-event.webp",
+        "alt": "Build Your AI Marketing Team with Agents event poster"
+      },
+      {
+        "file": "meta-stage.webp",
+        "alt": "Albert Chan presenting on stage at Meta in Los Angeles"
+      },
+      {
+        "file": "goldman-stage.webp",
+        "alt": "Albert Chan speaking at a Goldman Sachs podium"
+      },
+      {
+        "file": "future-tech.webp",
+        "alt": "Future Tech Event speaker poster featuring Albert Chan"
+      },
+      {
+        "file": "ebay-open.webp",
+        "alt": "eBay Open workshop speaker poster featuring Albert Chan"
+      },
+      {
+        "file": "leland.webp",
+        "alt": "AI Transformation Week event poster featuring Albert Chan"
+      },
+      {
+        "file": "laba.webp",
+        "alt": "Laba Global webinar poster featuring Albert Chan"
+      },
+      {
+        "file": "meta-summit.webp",
+        "alt": "Meta SMB Advertiser Summit speaker lineup featuring Albert Chan"
+      },
+      {
+        "file": "talks-google.webp",
+        "alt": "Albert Chan hosting a Talks at Google conversation with Nigel Ng"
+      },
+      {
+        "file": "icesi-event.webp",
+        "alt": "Icesi Age of Assistance speaker poster featuring Albert Chan"
+      },
+      {
+        "file": "ecommerce-summit.webp",
+        "alt": "Global eCommerce Summit speaker poster featuring Albert Chan"
+      }
+    ],
+    "music": "Original locally generated ambient composition. Speech passages contain no added music."
+  }
 }

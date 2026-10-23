@@ -8,7 +8,7 @@
   const preferenceKey = 'albert-career-music';
   let enabled = true;
   try { enabled = localStorage.getItem(preferenceKey) !== 'off'; } catch {}
-  let context, master, timer, playing = false;
+  let context, master, timer, playing = false, mediaActive = false;
   const gestureEvents = ['pointerup', 'keydown'];
   let nextChord = 0, nextMelody = 0, chordIndex = 0, melodyIndex = 0;
   // An original, slow composition using soft sine tones. All sound stays local.
@@ -41,7 +41,7 @@
   }
 
   function schedule() {
-    if (!playing || context.state !== 'running' || document.hidden) return;
+    if (!playing || context.state !== 'running' || document.hidden || mediaActive) return;
     const horizon = context.currentTime + .4;
     while (nextChord < horizon) {
       chords[chordIndex % chords.length].forEach((note, i) => tone(note, nextChord + i * .11, 7.6, .065, true));
@@ -56,18 +56,18 @@
   }
 
   function render() {
-    const audible = enabled && playing && context?.state === 'running' && !document.hidden;
-    control.dataset.state = audible ? 'playing' : enabled ? 'ready' : 'paused';
+    const audible = enabled && playing && context?.state === 'running' && !document.hidden && !mediaActive;
+    control.dataset.state = mediaActive ? 'video' : audible ? 'playing' : enabled ? 'ready' : 'paused';
     control.dataset.audioState = context?.state || 'idle';
-    button.setAttribute('aria-pressed', String(enabled));
-    button.setAttribute('aria-label', enabled ? 'Turn background music off' : 'Turn background music on');
-    label.textContent = audible ? 'Music on' : enabled ? 'Music ready' : 'Music off';
-    control.querySelector('.music-icon').textContent = enabled ? 'Ⅱ' : '♫';
+    button.setAttribute('aria-pressed', String(audible));
+    button.setAttribute('aria-label', audible ? 'Pause background music' : 'Play background music');
+    label.textContent = mediaActive ? 'Music paused' : audible ? 'Music on' : enabled ? 'Play music' : 'Music off';
+    control.querySelector('.music-icon').textContent = audible ? 'Ⅱ' : '♫';
     volume.disabled = !enabled;
   }
 
   function syncPlayback() {
-    const running = enabled && context?.state === 'running' && !document.hidden;
+    const running = enabled && context?.state === 'running' && !document.hidden && !mediaActive;
     if (running && !playing) {
       playing = true;
       nextChord = context.currentTime + .08;
@@ -76,6 +76,7 @@
       schedule();
       clearInterval(timer);
       timer = setInterval(schedule, 100);
+      status.textContent = 'Quiet music is playing.';
     } else if (!running) {
       playing = false;
       clearInterval(timer);
@@ -102,13 +103,13 @@
   }
 
   function start() {
-    if (!enabled || document.hidden) return;
+    if (!enabled || document.hidden || mediaActive) return;
     try {
       createEngine();
       // Autoplay can stay suspended until a trusted visitor interaction.
       // Keep the off switch usable while a resume request is pending.
       context.resume().then(() => {
-        if (!enabled || document.hidden) context.suspend().catch(() => {});
+        if (!enabled || document.hidden || mediaActive) context.suspend().catch(() => {});
         syncPlayback();
       }).catch(() => {
         syncPlayback();
@@ -125,7 +126,7 @@
   }
 
   function onGesture(event) {
-    if (!enabled || playing || !event.isTrusted || event.target.closest('.sound-control')) return;
+    if (!enabled || playing || mediaActive || !event.isTrusted || event.target.closest('.sound-control')) return;
     if (event.type === 'keydown' && (event.ctrlKey || event.metaKey || event.altKey || ['Shift', 'Control', 'Alt', 'Meta'].includes(event.key))) return;
     start();
   }
@@ -133,7 +134,9 @@
     gestureEvents.forEach(type => document[enabled ? 'addEventListener' : 'removeEventListener'](type, onGesture));
   }
   function toggle() {
-    enabled = !enabled;
+    // A pending autoplay request is silent, so the first click must start it.
+    const audible = enabled && playing && context?.state === 'running' && !document.hidden && !mediaActive;
+    enabled = !audible;
     try { localStorage.setItem(preferenceKey, enabled ? 'on' : 'off'); } catch {}
     listenForPlayback();
     if (enabled) start();
@@ -158,6 +161,21 @@
     if (document.hidden) {
       if (context) context.suspend().catch(() => {});
     } else if (enabled) start();
+  });
+  document.addEventListener('speaking-video-open', () => {
+    mediaActive = true;
+    playing = false;
+    clearInterval(timer);
+    if (context) {
+      master.gain.setValueAtTime(0, context.currentTime);
+      context.suspend().catch(() => {});
+    }
+    render();
+  });
+  document.addEventListener('speaking-video-close', () => {
+    mediaActive = false;
+    if (enabled) start();
+    else render();
   });
   listenForPlayback();
   render();
