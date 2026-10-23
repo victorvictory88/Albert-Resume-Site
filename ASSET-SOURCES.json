@@ -195,18 +195,18 @@
     "permission": "User supplied the recordings and photos and requested publication on both portfolio hosts.",
     "videos": [
       {
-        "file": "assets/speaking/goldman-30s.mp4",
+        "file": "assets/speaking/goldman-30s-recut.mp4",
         "source": "https://photos.app.goo.gl/pEWAFTR1apmTcjpdA",
         "duration_seconds": 30
       },
       {
-        "file": "assets/speaking/uw-30s.mp4",
+        "file": "assets/speaking/uw-30s-recut.mp4",
         "source": "https://www.youtube.com/watch?v=XeUWk8sPivM",
         "duration_seconds": 30,
-        "framing": "Subject-focused crop from full-resolution classroom excerpts."
+        "framing": "Wider speaker-focused crop with nearby students visible."
       },
       {
-        "file": "assets/speaking/icesi-30s.mp4",
+        "file": "assets/speaking/icesi-30s-recut.mp4",
         "source": "https://www.youtube.com/watch?v=NeYOBTJIsfg",
         "duration_seconds": 30,
         "source_session": "05:51:00 through 06:30:00",
@@ -270,5 +270,10 @@
     ],
     "music": "Original locally generated ambient composition. Speech passages contain no added music.",
     "revised": "2026-10-23"
+  },
+  "speaking_revision": {
+    "goldman": "Opening from source 0:50 to 1:10.5, ending at a speech boundary near requested 1:11, followed by montage to 30 seconds.",
+    "uw": "Wider crop includes nearby students; source crop 520 by 292.5 pixels from 1080 by 1920 source.",
+    "icesi": "19.6 seconds of stage and audience-facing montage after 10.4 seconds of original Spanish speech. English captions retained."
   }
 }

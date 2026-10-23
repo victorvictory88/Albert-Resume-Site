@@ -5,6 +5,7 @@
   const video = dialog.querySelector('video');
   const title = dialog.querySelector('#reel-dialog-title');
   const status = dialog.querySelector('.reel-status');
+  const previewFiles = {goldman: 'goldman-30s-recut', uw: 'uw-30s-recut', icesi: 'icesi-30s-recut', meta: 'meta-30s'};
   let trigger, generation = 0;
   document.querySelectorAll('.speaking-tile').forEach(button => {
     button.addEventListener('click', () => {
@@ -18,10 +19,10 @@
       captions.kind = 'captions';
       captions.srclang = 'en';
       captions.label = button.dataset.reel === 'icesi' ? 'English translation' : 'English';
-      captions.src = `assets/speaking/${button.dataset.reel}-30s-en.vtt`;
+      captions.src = `assets/speaking/${previewFiles[button.dataset.reel]}-en.vtt`;
       captions.default = window.matchMedia('(max-width: 600px)').matches;
       video.append(captions);
-      video.src = `assets/speaking/${button.dataset.reel}-30s.mp4`;
+      video.src = `assets/speaking/${previewFiles[button.dataset.reel]}.mp4`;
       video.setAttribute('aria-label', `${button.dataset.title}, 30-second preview`);
       document.dispatchEvent(new Event('speaking-video-open'));
       dialog.showModal();
