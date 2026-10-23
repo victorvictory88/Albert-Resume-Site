@@ -18,11 +18,11 @@
       captions.kind = 'captions';
       captions.srclang = 'en';
       captions.label = button.dataset.reel === 'icesi' ? 'English translation' : 'English';
-      captions.src = `assets/speaking/${button.dataset.reel}-en.vtt`;
+      captions.src = `assets/speaking/${button.dataset.reel}-30s-en.vtt`;
       captions.default = window.matchMedia('(max-width: 600px)').matches;
       video.append(captions);
-      video.src = `assets/speaking/${button.dataset.reel}-15s.mp4`;
-      video.setAttribute('aria-label', `${button.dataset.title}, 15-second preview`);
+      video.src = `assets/speaking/${button.dataset.reel}-30s.mp4`;
+      video.setAttribute('aria-label', `${button.dataset.title}, 30-second preview`);
       document.dispatchEvent(new Event('speaking-video-open'));
       dialog.showModal();
       document.documentElement.classList.add('reel-open');

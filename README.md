@@ -49,4 +49,6 @@ University of Washington and ELVTR appear alongside the teaching summary. Harvar
 
 The rowing course provides visual navigation without making claims about athletic history.
 
-Section 02 includes three 15-second speaking previews and a 12-image photo ticker. The video dialog supports keyboard dismissal and selectable English captions. Background music pauses during previews and preserves the visitor preference.
+Section 02 includes four 30-second speaking previews and a 12-image photo ticker. The video dialog supports keyboard dismissal and selectable English captions. Background music pauses during previews and preserves the visitor preference.
+
+The centered speaking gallery leads section 02, followed by the teaching panel. The UW preview uses a close crop around the speaker.

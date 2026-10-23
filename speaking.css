@@ -13,3 +13,13 @@ html.reel-open{overflow:hidden}.speaking-dialog{border:1px solid #b6bcae;border-
 .no-motion .speaker-ticker{overflow-x:auto;mask-image:none}.no-motion .speaker-photo-set[aria-hidden]{display:none}.photo-pause:disabled{opacity:.65;cursor:default}
 
 .speaking-video::cue{font-size:clamp(14px,1.7vw,23px);background:#11262de8;color:#fff;}
+
+/* The speaking gallery leads section 02; teaching follows as its own panel. */
+.speaking-showcase{margin-top:34px;padding-top:0;border-top:0;margin-bottom:80px;padding-bottom:58px;border-bottom:1px solid #a7b6b152}
+.speaking-heading{flex-direction:column;align-items:center;text-align:center;gap:17px}.speaking-heading>p{margin:0}.speaking-heading h3{max-width:none}
+.speaking-reels{grid-template-columns:repeat(4,minmax(0,1fr));max-width:1100px;margin-inline:auto;gap:24px}.reel-title{text-align:center;max-width:none;font-size:clamp(17px,1.45vw,21px)}.reel-action{justify-content:center;gap:16px}
+.teaching-panel{position:relative}.beyond .teaching-panel .badge-rig{bottom:auto}
+@media(min-width:761px){.beyond .teaching-panel .badge-rig{top:155px;right:0}}
+@media(max-width:1100px){.speaking-reels{grid-template-columns:repeat(2,minmax(0,1fr));max-width:650px}.speaking-tile:last-child{grid-column:auto}}
+@media(max-width:760px){.speaking-showcase{margin-top:30px;margin-bottom:55px;padding-bottom:35px}.speaking-heading{align-items:center;gap:16px}.speaking-heading h3{font-size:37px}.speaking-reels{gap:22px 16px}.reel-title{font-size:17px}.beyond .teaching-panel .badge-rig{top:auto;right:auto}}
+@media(max-width:390px){.reel-title{font-size:15px}}
