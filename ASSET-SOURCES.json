@@ -280,5 +280,17 @@
   "rowland_positioning_update": {
     "source": "Albert Chan, direct instruction, 2026-10-23",
     "approved_fact": "Changed the company's go-to-market value proposition from a chatbot to an Agentic Org Chart."
-  }
+  },
+  "speaking_photo_additions": [
+    {
+      "asset": "assets/speaking/accenture-fireside.webp",
+      "source": "User-supplied photo, 2026-10-23",
+      "description": "Albert Chan at an Accenture fireside chat"
+    },
+    {
+      "asset": "assets/speaking/lego-stage.webp",
+      "source": "User-supplied photo, 2026-10-23",
+      "description": "Albert Chan speaking on stage at the LEGO National Sales Conference"
+    }
+  ]
 }
