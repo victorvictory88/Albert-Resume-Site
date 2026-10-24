@@ -51,4 +51,4 @@ The rowing course provides visual navigation without making claims about athleti
 
 Section 02 includes four 30-second speaking previews and a 12-image photo ticker. The video dialog supports keyboard dismissal and selectable English captions. Background music pauses during previews and preserves the visitor preference.
 
-The centered speaking gallery leads section 02, followed by the teaching panel. The UW preview uses a class-facing passage from 4:13.1–4:35.3 with nearby students visible. The Goldman opening uses source 0:28–0:48. The Icesi montage emphasizes center-stage footage away from the lectern.
+The centered speaking gallery leads section 02, followed by the teaching panel. The UW preview uses a class-facing passage from 4:13.1–4:28.5 with nearby students visible. The Goldman opening uses source 0:28–0:48.8, including the complete word “frameworks.” The Icesi montage emphasizes center-stage footage away from the lectern.
