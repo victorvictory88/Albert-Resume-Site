@@ -203,7 +203,7 @@
         "file": "assets/speaking/uw-30s-before-questions.mp4",
         "source": "https://www.youtube.com/watch?v=XeUWk8sPivM",
         "duration_seconds": 30,
-        "framing": "Class-facing speech from4:13.1\u20134:28.5, with nearby students visible; no computer-focused demo shots."
+        "framing": "Class-facing speech from4:13.1–4:28.5, with nearby students visible; no computer-focused demo shots."
       },
       {
         "file": "assets/speaking/icesi-30s-recut.mp4",
@@ -275,5 +275,10 @@
     "goldman": "Speech from source0:28 through0:48.8, finishing frameworks before the fast montage.",
     "uw": "Class-facing speech from4:13.1 through4:28.5, transitioning before the questions sentence. Wider crop retained.",
     "icesi": "19.6 seconds of stage and audience-facing montage after 10.4 seconds of original Spanish speech. English captions retained."
+  },
+  "page_background_music": "Removed at user request. Only video playback produces audio; speech and montage tracks within the videos are retained.",
+  "rowland_positioning_update": {
+    "source": "Albert Chan, direct instruction, 2026-10-23",
+    "approved_fact": "Changed the company's go-to-market value proposition from a chatbot to an Agentic Org Chart."
   }
 }
