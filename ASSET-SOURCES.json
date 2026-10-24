@@ -292,5 +292,14 @@
       "source": "User-supplied photo, 2026-10-23",
       "description": "Albert Chan speaking on stage at the LEGO National Sales Conference"
     }
-  ]
+  ],
+  "agentic_org_chart_launch_video": {
+    "source": "Albert Chan, supplied 2026-10-24",
+    "asset": "assets/speaking/agentic-org-chart-launch.mp4",
+    "title": "Agentic Org Chart launch video",
+    "duration_seconds": 96.085333,
+    "format": "Full original video, 1080 × 1350 portrait framing. Web encoding with original audio retained.",
+    "poster": "Frame at 2 seconds. Full portrait image retained.",
+    "captions": "Existing on-screen captions remain part of the supplied video."
+  }
 }
