@@ -195,15 +195,15 @@
     "permission": "User supplied the recordings and photos and requested publication on both portfolio hosts.",
     "videos": [
       {
-        "file": "assets/speaking/goldman-30s-recut.mp4",
+        "file": "assets/speaking/goldman-30s-selected.mp4",
         "source": "https://photos.app.goo.gl/pEWAFTR1apmTcjpdA",
         "duration_seconds": 30
       },
       {
-        "file": "assets/speaking/uw-30s-recut.mp4",
+        "file": "assets/speaking/uw-30s-facing.mp4",
         "source": "https://www.youtube.com/watch?v=XeUWk8sPivM",
         "duration_seconds": 30,
-        "framing": "Wider speaker-focused crop with nearby students visible."
+        "framing": "Class-facing speech from4:13.1\u20134:35.3, with nearby students visible; no computer-focused demo shots."
       },
       {
         "file": "assets/speaking/icesi-30s-recut.mp4",
@@ -272,8 +272,8 @@
     "revised": "2026-10-23"
   },
   "speaking_revision": {
-    "goldman": "Opening from source 0:50 to 1:10.5, ending at a speech boundary near requested 1:11, followed by montage to 30 seconds.",
-    "uw": "Wider crop includes nearby students; source crop 520 by 292.5 pixels from 1080 by 1920 source.",
+    "goldman": "Opening from source0:28 through0:48 exactly, followed by a10-second montage.",
+    "uw": "New continuous class-facing speech from4:13.1 through4:35.3, followed by teaching gestures with music. Wider crop retained.",
     "icesi": "19.6 seconds of stage and audience-facing montage after 10.4 seconds of original Spanish speech. English captions retained."
   }
 }
