@@ -26,6 +26,6 @@ html.reel-open{overflow:hidden}.speaking-dialog{border:1px solid #b6bcae;border-
 
 /* All five videos share one row; smaller screens can scroll the row. */
 .speaking-reels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:1400px;margin-inline:auto;gap:24px}
-.launch-poster>img{object-fit:contain;background:#f3f4f7}
+.launch-poster>img{object-fit:cover;object-position:center top}
 .speaking-video.is-portrait{aspect-ratio:4/5;width:auto;max-width:100%;height:65svh;margin-inline:auto}
 @media(max-width:900px){.speaking-reels{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:18px;overflow-x:auto;scroll-snap-type:x proximity;padding:8px 4px 18px;scroll-padding-inline:4px}.speaking-tile{flex:0 0 clamp(180px,36vw,240px);scroll-snap-align:start}}
