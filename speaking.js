@@ -5,7 +5,7 @@
   const video = dialog.querySelector('video');
   const title = dialog.querySelector('#reel-dialog-title');
   const status = dialog.querySelector('.reel-status');
-  const previewFiles = {goldman: 'goldman-30s-complete', uw: 'uw-30s-before-questions', icesi: 'icesi-30s-recut', meta: 'meta-30s', agentic: 'agentic-org-chart-launch', marketing: 'marketing-team-30s'};
+  const previewFiles = {goldman: 'goldman-30s-complete', uw: 'uw-30s-before-questions', icesi: 'icesi-30s-recut', meta: 'meta-30s', agentic: 'agentic-org-chart-launch', marketing: 'marketing-team-speaking-recut'};
   let trigger, generation = 0;
   document.querySelectorAll('.speaking-tile').forEach(button => {
     button.addEventListener('click', () => {
@@ -28,7 +28,7 @@
       const duration = button.dataset.duration || '30-second preview';
       video.setAttribute('aria-label', `${button.dataset.title}, ${duration}`);
       video.classList.toggle('is-portrait', button.dataset.orientation === 'portrait');
-      dialog.querySelector('.reel-dialog-head .eyebrow').textContent = button.dataset.reel === 'agentic' ? 'LAUNCH VIDEO · 1 MINUTE 36 SECONDS' : 'SPEAKING PREVIEW · 30 SECONDS';
+      dialog.querySelector('.reel-dialog-head .eyebrow').textContent = button.dataset.reel === 'agentic' ? 'LAUNCH VIDEO · 1 MINUTE 36 SECONDS' : (button.dataset.previewLabel || 'SPEAKING PREVIEW · 30 SECONDS');
       document.dispatchEvent(new Event('speaking-video-open'));
       dialog.showModal();
       document.documentElement.classList.add('reel-open');

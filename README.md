@@ -47,10 +47,10 @@ University of Washington and ELVTR appear alongside the teaching summary. Harvar
 
 The rowing course provides visual navigation without making claims about athletic history.
 
-Section 02 includes five 30-second speaking previews, the full 1:36 Agentic Org Chart launch video, and a 14-image photo ticker. The video dialog supports keyboard dismissal and selectable English captions. Page background music has been removed.
+Section 02 includes five speaking previews, the full 1:36 Agentic Org Chart launch video, and a 14-image photo ticker. The video dialog supports keyboard dismissal and selectable English captions. Page background music has been removed.
 
 The centered speaking gallery leads section 02, followed by the teaching panel. The UW preview uses a class-facing passage from 4:13.1–4:28.5 with nearby students visible. The Goldman opening uses source 0:28–0:48.8, including the complete word “frameworks.” The Icesi montage emphasizes center-stage footage away from the lectern.
 
 The teaching paragraph includes the Goldman Sachs 10,000 Small Business Conference and LEGO National Sales Conference. Their separate event logo block has been removed.
 
-The marketing-team preview starts at source 3:06 and includes sped-up scenes from 6:07, 13:15, and 21:39. All six video tiles share one desktop row.
+The marketing-team preview starts at source 4:43 and finishes around 5:02 and includes sped-up scenes from 6:07, 13:15, and 21:39. All six video tiles share one desktop row.
