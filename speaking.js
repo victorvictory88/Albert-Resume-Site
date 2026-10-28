@@ -5,7 +5,7 @@
   const video = dialog.querySelector('video');
   const title = dialog.querySelector('#reel-dialog-title');
   const status = dialog.querySelector('.reel-status');
-  const previewFiles = {goldman: 'goldman-30s-complete', uw: 'uw-30s-before-questions', icesi: 'icesi-30s-recut', meta: 'meta-30s', agentic: 'agentic-org-chart-launch'};
+  const previewFiles = {goldman: 'goldman-30s-complete', uw: 'uw-30s-before-questions', icesi: 'icesi-30s-recut', meta: 'meta-30s', agentic: 'agentic-org-chart-launch', marketing: 'marketing-team-30s'};
   let trigger, generation = 0;
   document.querySelectorAll('.speaking-tile').forEach(button => {
     button.addEventListener('click', () => {

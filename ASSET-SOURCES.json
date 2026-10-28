@@ -301,5 +301,39 @@
     "format": "Full original video, 1080 × 1350 portrait framing. Web encoding with original audio retained.",
     "poster": "Frame at 2 seconds. Full portrait image retained.",
     "captions": "Existing on-screen captions remain part of the supplied video."
+  },
+  "build_ai_marketing_team_reel": {
+    "title": "Build Your AI Marketing Team with Agents",
+    "total_seconds": 30,
+    "source_url": "https://www.joinleland.com/meet/event/urn:classSession:6ac6810933506e715039d502",
+    "speech": {
+      "source_start": 186,
+      "source_end": 204.6,
+      "speed": 1,
+      "music": false,
+      "cleanup": "Removed the trailing syllable before the opening sentence during the first 0.48 seconds."
+    },
+    "montage": [
+      {
+        "source_start": 367,
+        "source_end": 376.5,
+        "output_seconds": 3.8,
+        "speed": 2.5
+      },
+      {
+        "source_start": 795,
+        "source_end": 804.5,
+        "output_seconds": 3.8,
+        "speed": 2.5
+      },
+      {
+        "source_start": 1299,
+        "source_end": 1308.5,
+        "output_seconds": 3.8,
+        "speed": 2.5
+      }
+    ],
+    "music": "Existing original speaking-preview montage cue",
+    "captions": "Verbatim speech, locally transcribed with word timings"
   }
 }
